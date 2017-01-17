@@ -5,15 +5,19 @@ This component borrows heavily from the material design of google. While it is n
 ### Screenshots
 
 _base look_
+
 ![Base look](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/base.jpg)
 
 _selection_
+
 ![Selection](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/selection.jpg)
 
 _no header_
+
 ![No header](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/no-header.jpg)
 
 _horizontal_
+
 ![Horizontal](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/horizontal.jpg)
 
 
