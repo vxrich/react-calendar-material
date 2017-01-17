@@ -57,3 +57,5 @@ ReactDOM.render(
 );
 
 ```
+
+Please note, this is not even version 1.0.0 so if you find bugs or want to participate please log bugs to github or fork the repo. 
