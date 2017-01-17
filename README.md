@@ -6,19 +6,19 @@ This component borrows heavily from the material design of google. While it is n
 
 _base look_
 
-![Base look](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/base.jpg)
+![Base look](https://github.com/icarus-sullivan/react-calendar-material/raw/master/images/base.jpg)
 
 _selection_
 
-![Selection](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/selection.jpg)
+![Selection](https://github.com/icarus-sullivan/react-calendar-material/raw/master/images/selection.jpg)
 
 _no header_
 
-![No header](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/no-header.jpg)
+![No header](https://github.com/icarus-sullivan/react-calendar-material/raw/master/images/no-header.jpg)
 
 _horizontal_
 
-![Horizontal](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/horizontal.jpg)
+![Horizontal](https://github.com/icarus-sullivan/react-calendar-material/raw/master/images/horizontal.jpg)
 
 
 ### Installation
@@ -58,4 +58,4 @@ ReactDOM.render(
 
 ```
 
-Please note, this is not even version 1.0.0 so if you find bugs or want to participate please log bugs to github or fork the repo. 
+Please note, this is not even version 1.0.0 so if you find bugs or want to participate please log bugs to github or fork the repo.
