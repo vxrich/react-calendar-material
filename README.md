@@ -8,13 +8,13 @@ _base look_
 ![Base look](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/base.jpg)
 
 _selection_
-![Base look](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/selection.jpg)
+![Selection](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/selection.jpg)
 
 _no header_
-![Base look](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/no-header.jpg)
+![No header](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/no-header.jpg)
 
 _horizontal_
-![Base look](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/horizontal.jpg)
+![Horizontal](https://github.com/icarus-sullivan/react-calendar-material/blob/master/images/horizontal.jpg)
 
 
 ### Installation
