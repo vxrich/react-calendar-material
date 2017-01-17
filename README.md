@@ -38,7 +38,7 @@ The current list of propTypes.
 
 ### Usage
 
-The following example shows a use case to test for valid data. Provided are some dummy form data, and a schema to check against.
+The following example shows the simplest case with all four props passed into our Calendar component.
 
 ```jsx
 import React from 'react';
