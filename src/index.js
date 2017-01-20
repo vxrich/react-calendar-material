@@ -63,11 +63,8 @@ class Calendar extends Component {
     if( opts.today ) {
       today = "current";
       todayStyle = {
-        backgroundColor: this.props.accentColor,
+        borderColor: this.props.accentColor,
       };
-      containerStyle = {
-        color: '#ffffff'
-      }
     }
 
     var selected = "";
@@ -75,7 +72,10 @@ class Calendar extends Component {
     if( opts.selected ) {
       selected = "selected";
       selectedStyle = {
-        borderColor: this.props.accentColor
+        backgroundColor: this.props.accentColor
+      }
+      containerStyle = {
+        color: '#ffffff'
       }
     }
 
