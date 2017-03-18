@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import './index.css';
+import ic_back from './ic_back.svg';
+import ic_forward from './ic_forward.svg';
 
 const config = {
     months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -182,11 +184,11 @@ class Calendar extends Component {
       {upperDate}
       <div className="padding">
         <div className='month'>
-          <img className="month-arrow-left" src="/ic_back.svg" alt="back" onClick={this.prev.bind(this)}></img>
+          <img className="month-arrow-left" src={ic_back} alt="back" onClick={this.prev.bind(this)}></img>
           <p className="month-title">{month}<br/>
           <span className="month-year">{year}</span>
           </p>
-          <img className="month-arrow-right" src="/ic_forward.svg" alt="forward" onClick={this.next.bind(this)}></img>
+          <img className="month-arrow-right" src={ic_forward} alt="forward" onClick={this.next.bind(this)}></img>
         </div>
         <div className='footer'>
           {header}
