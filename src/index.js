@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './index.css';
 import ic_back from './ic_back.svg';
 import ic_forward from './ic_forward.svg';
