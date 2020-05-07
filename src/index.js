@@ -226,6 +226,7 @@ Calendar.propTypes = {
   onDatePicked: PropTypes.func,
   showHeader: PropTypes.bool,
   orientation: PropTypes.string,
+  lang: PropTypes.string,
 };
 
 Calendar.defaultProps = {
@@ -233,6 +234,7 @@ Calendar.defaultProps = {
   onDatePicked: function () {},
   showHeader: true,
   orientation: "flex-col",
+  lang: "eng",
 };
 
 export default Calendar;
