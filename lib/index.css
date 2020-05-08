@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   /*border: 1px solid red;*/
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .container {
@@ -134,7 +134,7 @@
 
 .footer {
   width: 100%;
-  min-width: 400px;
+  /* min-width: 400px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,11 +145,11 @@
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Chrome/Safari/Opera */
-     -khtml-user-select: none; /* Konqueror */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none;
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
 }
 
 .day-headers {
@@ -159,7 +159,6 @@
   padding: 8px 0px 8px 0px;
   font-weight: bold;
 }
-
 
 .day {
   flex-basis: 14%;
@@ -171,9 +170,10 @@
   position: relative;
 }
 
-.day, p {
-  padding-left: 8px;
-  padding-right: 8px;
+.day,
+p {
+  /* padding-left: 8px;
+  padding-right: 8px; */
 }
 
 .current {
@@ -197,7 +197,6 @@
   height: 30px;
   z-index: -100;
 }
-
 
 .non-current {
   opacity: 0.2;
