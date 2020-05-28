@@ -38,6 +38,7 @@ export const language = {
     ],
     week_subs: ["SU", "MO", "TU", "WE", "TH", "FR", "SA"],
   },
+  //Italian
   ita: {
     months: [
       "Gennaio",
