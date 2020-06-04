@@ -203,7 +203,6 @@ class Calendar extends Component {
               <p style={{ color: this.props.accentColor, fontWeight: "bold" }}>
                 {month}
               </p>
-              <br />
               <span className="month-year">{year}</span>
             </p>
             <img
