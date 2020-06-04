@@ -200,7 +200,9 @@ class Calendar extends Component {
               onClick={this.prev.bind(this)}
             ></img>
             <p className="month-title">
-              {month}
+              <p style={{ color: this.props.accentColor, fontWeight: "bold" }}>
+                {month}
+              </p>
               <br />
               <span className="month-year">{year}</span>
             </p>
@@ -211,7 +213,10 @@ class Calendar extends Component {
               onClick={this.next.bind(this)}
             ></img>
           </div>
-          <div className="footer">
+          <div
+            className="footer"
+            style={{ borderColor: this.props.accentColor }}
+          >
             {header}
             {days}
           </div>
