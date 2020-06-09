@@ -78,11 +78,7 @@ class Calendar extends Component {
     baseClasses += opts.current ? "" : " non-current";
 
     return (
-      <div
-        key={Math.floor(Math.random() * 100)}
-        className={baseClasses}
-        style={containerStyle}
-      >
+      <div key={i} className={baseClasses} style={containerStyle}>
         <div className={today} style={todayStyle}></div>
         <div className={selected} style={selectedStyle}></div>
         <p
@@ -143,6 +139,7 @@ class Calendar extends Component {
           current: inMonth,
           month: inMonth ? 0 : lastMonth ? -1 : 1,
           date: copy,
+          key: i,
         })
       );
     }
