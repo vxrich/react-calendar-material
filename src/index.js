@@ -78,7 +78,7 @@ class Calendar extends Component {
     baseClasses += opts.current ? "" : " non-current";
 
     return (
-      <div key={i} className={baseClasses} style={containerStyle}>
+      <div key={opts.key} className={baseClasses} style={containerStyle}>
         <div className={today} style={todayStyle}></div>
         <div className={selected} style={selectedStyle}></div>
         <p
