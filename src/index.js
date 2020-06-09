@@ -78,7 +78,11 @@ class Calendar extends Component {
     baseClasses += opts.current ? "" : " non-current";
 
     return (
-      <div className={baseClasses} style={containerStyle}>
+      <div
+        key={Math.floor(Math.random() * 100)}
+        className={baseClasses}
+        style={containerStyle}
+      >
         <div className={today} style={todayStyle}></div>
         <div className={selected} style={selectedStyle}></div>
         <p
@@ -151,7 +155,9 @@ class Calendar extends Component {
 
     for (var i = 0; i < this.config.week_subs.length; i++) {
       header.push(
-        <p className="day-headers noselect">{this.config.week_subs[i]}</p>
+        <p key={i} className="day-headers noselect">
+          {this.config.week_subs[i]}
+        </p>
       );
     }
 
@@ -199,12 +205,12 @@ class Calendar extends Component {
               alt="back"
               onClick={this.prev.bind(this)}
             ></img>
-            <p className="month-title">
+            <div className="month-title">
               <p style={{ color: this.props.accentColor, fontWeight: "bold" }}>
                 {month}
               </p>
               <span className="month-year">{year}</span>
-            </p>
+            </div>
             <img
               className="month-arrow-right"
               src={ic_forward}
