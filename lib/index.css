@@ -190,6 +190,17 @@ p {
   z-index: -80;
 }
 
+.hasEvent {
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  border: 2px solid green;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  z-index: -80;
+}
+
 .selected {
   position: absolute;
   top: calc(50% - 15px);
