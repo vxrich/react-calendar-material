@@ -81,7 +81,7 @@ class Calendar extends Component {
       <div key={opts.key} className={baseClasses} style={containerStyle}>
         <div
           className={`${today} ${
-            this.props.eventsBool[opts.date.getDate()] && opts.current
+            this.props.eventsBool[opts.date.getDate() - 1] && opts.current
               ? "hasEvent"
               : ""
           }`}
