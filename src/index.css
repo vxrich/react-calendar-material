@@ -194,19 +194,21 @@ p {
   position: absolute;
   top: calc(50% - 15px);
   left: calc(50% - 15px);
-  /* border-bottom: 3px solid green; */
-  /* border-radius: 15px; */
   width: 30px;
   height: 30px;
   z-index: -80;
+  border-bottom-left-radius: 50px; /* 100px of height + 10px of border */
+  border-bottom-right-radius: 50px; /* 100px of height + 10px of border */
+  border: 3px solid green;
+  border-top: 0;
 }
 
-.hasEvent::after {
+/* .hasEvent::after {
   content: url("assets/dayEvent.svg");
   position: relative;
   bottom: 0;
   fill: green;
-}
+} */
 
 .selected {
   position: absolute;
