@@ -239,7 +239,7 @@ Calendar.propTypes = {
   showHeader: PropTypes.bool,
   orientation: PropTypes.string,
   lang: PropTypes.string,
-  eventsBool: PropsTypes.arrayOf(PropTypes.bool),
+  // eventsBool: PropsTypes.arrayOf(PropTypes.bool),
 };
 
 Calendar.defaultProps = {
