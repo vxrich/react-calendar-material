@@ -76,7 +76,7 @@ class Calendar extends Component {
     }
 
     baseClasses += opts.current ? "" : " non-current";
-    console.log("DAY OF MONTH ==>", opts.date.getDay());
+    console.log("DAY OF MONTH ==>", opts.date.getDate(), this.props.eventsBool);
     return (
       <div key={opts.key} className={baseClasses} style={containerStyle}>
         <div
