@@ -195,12 +195,13 @@ p {
   top: calc(50% - 15px);
   left: calc(50% - 15px);
   width: 30px;
-  height: 30px;
+  height: 15px;
   z-index: -80;
   border-bottom-left-radius: 50px; /* 100px of height + 10px of border */
   border-bottom-right-radius: 50px; /* 100px of height + 10px of border */
   border: 3px solid green;
   border-top: 0;
+  margin-top: 15px;
 }
 
 /* .hasEvent::after {
