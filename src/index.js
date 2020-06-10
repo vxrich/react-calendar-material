@@ -208,8 +208,8 @@ class Calendar extends Component {
               src={ic_back}
               alt="back"
               onClick={() => {
-                this.prev.bind(this);
                 this.props.onChangeMonth(-1);
+                this.prev.bind(this);
               }}
             ></img>
             <div className="month-title">
@@ -223,8 +223,8 @@ class Calendar extends Component {
               src={ic_forward}
               alt="forward"
               onClick={() => {
-                this.next.bind(this);
                 this.props.onChangeMonth(1);
+                this.next.bind(this);
               }}
             ></img>
           </div>
