@@ -207,7 +207,10 @@ class Calendar extends Component {
               className="month-arrow-left"
               src={ic_back}
               alt="back"
-              onClick={this.prev.bind(this)}
+              onClick={() => {
+                this.prev.bind(this);
+                this.props.onChangeMonth(-1);
+              }}
             ></img>
             <div className="month-title">
               <p style={{ color: this.props.accentColor, fontWeight: "bold" }}>
@@ -219,7 +222,10 @@ class Calendar extends Component {
               className="month-arrow-right"
               src={ic_forward}
               alt="forward"
-              onClick={this.next.bind(this)}
+              onClick={() => {
+                this.next.bind(this);
+                this.props.onChangeMonth(1);
+              }}
             ></img>
           </div>
           <div
@@ -241,7 +247,8 @@ Calendar.propTypes = {
   showHeader: PropTypes.bool,
   orientation: PropTypes.string,
   lang: PropTypes.string,
-  // eventsBool: PropsTypes.arrayOf(PropTypes.bool),
+  onChangeMonth: PropTypes.func,
+  eventsBool: PropTypes.array,
 };
 
 Calendar.defaultProps = {
@@ -251,6 +258,7 @@ Calendar.defaultProps = {
   orientation: "flex-col",
   lang: "eng",
   eventsBool: [],
+  onChangeMonth: function () {},
 };
 
 export default Calendar;
