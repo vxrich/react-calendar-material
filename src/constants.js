@@ -43,7 +43,7 @@ export const language = {
     months: [
       "Gennaio",
       "Febbraio",
-      "MArzo",
+      "Marzo",
       "Aprile",
       "Maggio",
       "Giugno",

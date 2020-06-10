@@ -55,12 +55,17 @@ class Calendar extends Component {
     var baseClasses = "day noselect";
     var today = "";
     var todayStyle = {};
+    var hasEvents = "";
+
     var containerStyle = {};
     if (opts.today) {
       today = "current";
       todayStyle = {
         borderColor: this.props.accentColor,
       };
+    }
+    if (this.props.eventsBool[opts.date.getDate() - 1] && opts.current) {
+      hasEvents = "hasEvents";
     }
 
     var selected = "";
@@ -80,12 +85,8 @@ class Calendar extends Component {
     return (
       <div key={opts.key} className={baseClasses} style={containerStyle}>
         <div
-          className={`${today} ${
-            this.props.eventsBool[opts.date.getDate() - 1] && opts.current
-              ? "hasEvent"
-              : ""
-          }`}
-          style={todayStyle}
+          className={`${today} ${hasEvents}`}
+          style={{ borderColor: this.props.accentColor }}
         ></div>
         <div className={selected} style={selectedStyle}></div>
         <p
