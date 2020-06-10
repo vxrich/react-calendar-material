@@ -194,7 +194,7 @@ p {
   position: absolute;
   top: calc(50% - 15px);
   left: calc(50% - 15px);
-  border: 2px solid green;
+  border-bottom: 3px solid green;
   border-radius: 15px;
   width: 30px;
   height: 30px;

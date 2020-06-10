@@ -79,13 +79,15 @@ class Calendar extends Component {
     console.log(
       "DAY OF MONTH ==>",
       opts.date.getDate(),
-      this.props.eventsBool[opts.date.getDate()]
+      this.props.eventsBool[opts.date.getDate() - 1]
     );
     return (
       <div key={opts.key} className={baseClasses} style={containerStyle}>
         <div
           className={`${today} ${
-            this.props.eventsBool[opts.date.getDate()] ? "hasEvent" : ""
+            this.props.eventsBool[opts.date.getDate()] && opts.current
+              ? "hasEvent"
+              : ""
           }`}
           style={todayStyle}
         ></div>
