@@ -191,6 +191,7 @@ p {
 }
 
 .hasEvent {
+  border-radius: unset;
   position: absolute;
   top: calc(50% - 15px);
   left: calc(50% - 15px);
@@ -202,7 +203,6 @@ p {
   border: 3px solid green;
   border-top: 0;
   margin-top: 15px;
-  border-radius: unset;
 }
 
 /* .hasEvent::after {
