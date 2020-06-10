@@ -239,7 +239,7 @@ Calendar.propTypes = {
   showHeader: PropTypes.bool,
   orientation: PropTypes.string,
   lang: PropTypes.string,
-  eventsBool: PropsTypes.array,
+  eventsBool: PropsTypes.arrayOf(PropTypes.bool),
 };
 
 Calendar.defaultProps = {
@@ -248,6 +248,7 @@ Calendar.defaultProps = {
   showHeader: true,
   orientation: "flex-col",
   lang: "eng",
+  eventsBool: [],
 };
 
 export default Calendar;
