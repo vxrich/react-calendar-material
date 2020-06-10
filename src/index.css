@@ -190,7 +190,7 @@ p {
   z-index: -80;
 }
 
-.hasEvent {
+.hasEvents {
   border-radius: unset;
   position: absolute;
   top: calc(50% - 15px);
