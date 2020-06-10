@@ -209,7 +209,8 @@ class Calendar extends Component {
               alt="back"
               onClick={() => {
                 this.props.onChangeMonth(-1);
-                this.prev.bind(this);
+                // this.prev.bind(this);
+                this.updateMonth(-1);
               }}
             ></img>
             <div className="month-title">
@@ -224,7 +225,8 @@ class Calendar extends Component {
               alt="forward"
               onClick={() => {
                 this.props.onChangeMonth(1);
-                this.next.bind(this);
+                // this.next.bind(this);
+                this.updateMonth(1);
               }}
             ></img>
           </div>
