@@ -76,10 +76,15 @@ class Calendar extends Component {
     }
 
     baseClasses += opts.current ? "" : " non-current";
-
+    console.log("DAY OF MONTH ==>", opts.date.day);
     return (
       <div key={opts.key} className={baseClasses} style={containerStyle}>
-        <div className={today} style={todayStyle}></div>
+        <div
+          className={`${today} ${
+            this.props.eventsBool[opts.date.day] ? "hasEvent" : ""
+          }`}
+          style={todayStyle}
+        ></div>
         <div className={selected} style={selectedStyle}></div>
         <p
           onClick={(ev) => {
@@ -234,6 +239,7 @@ Calendar.propTypes = {
   showHeader: PropTypes.bool,
   orientation: PropTypes.string,
   lang: PropTypes.string,
+  eventsBool: PropsTypes.array,
 };
 
 Calendar.defaultProps = {
