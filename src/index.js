@@ -35,7 +35,6 @@ class Calendar extends Component {
 
   _onDatePicked(month, day) {
     var d = new Date(this.state.current.getTime());
-    console.log("_onDatePicked ==>", month, day, d);
     d.setMonth(d.getMonth() + month);
     d.setDate(day);
     this.props.onDatePicked(d);
