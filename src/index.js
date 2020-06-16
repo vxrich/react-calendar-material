@@ -33,20 +33,14 @@ class Calendar extends Component {
     });
   }
 
-  prev() {
-    this.updateMonth(-1);
-  }
-
-  next() {
-    this.updateMonth(1);
-  }
-
   _onDatePicked(month, day) {
     var d = new Date(this.state.current.getTime());
+    console.log("_onDatePicked ==>", month, day, d);
     d.setMonth(d.getMonth() + month);
     d.setDate(day);
     this.props.onDatePicked(d);
     this.setState({
+      current: d,
       selected: d,
     });
   }
@@ -210,7 +204,6 @@ class Calendar extends Component {
               alt="back"
               onClick={() => {
                 this.props.onChangeMonth(-1);
-                // this.prev.bind(this);
                 this.updateMonth(-1);
               }}
             ></img>
@@ -226,7 +219,6 @@ class Calendar extends Component {
               alt="forward"
               onClick={() => {
                 this.props.onChangeMonth(1);
-                // this.next.bind(this);
                 this.updateMonth(1);
               }}
             ></img>
