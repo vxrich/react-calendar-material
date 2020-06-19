@@ -10,9 +10,11 @@ const TODAY = new Date();
 class Calendar extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      current: TODAY,
+      current: new Date(),
       selected: TODAY,
+
       ldom: 30,
     };
 
