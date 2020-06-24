@@ -225,7 +225,7 @@ class Calendar extends Component {
             ></img>
           </div>
           <div
-            className="footer"
+            className={`footer ${this.props.border ? "footer-border" : ""}`}
             style={{ borderColor: this.props.accentColor }}
           >
             {header}
@@ -245,6 +245,7 @@ Calendar.propTypes = {
   lang: PropTypes.string,
   onChangeMonth: PropTypes.func,
   eventsBool: PropTypes.array,
+  border: PropTypes.bool,
 };
 
 Calendar.defaultProps = {
@@ -255,6 +256,7 @@ Calendar.defaultProps = {
   lang: "eng",
   eventsBool: [],
   onChangeMonth: function () {},
+  border: false,
 };
 
 export default Calendar;

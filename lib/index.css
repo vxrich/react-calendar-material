@@ -142,6 +142,9 @@
   flex-flow: row wrap;
   text-align: center;
   cursor: default;
+}
+
+.footer-border {
   border: 2px solid;
   border-radius: 7px;
 }
