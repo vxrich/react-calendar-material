@@ -1,5 +1,11 @@
 # react-calendar-material
 
+This calendar is forked from the awesome work at: ![react-calendar-material](https://github.com/icarus-sullivan/react-calendar-material)
+This version includes:
+- Some bugfix
+- Italian language
+- Specific style (Working on general and extreamly customizable details)
+
 This component borrows heavily from the material design of google. While it is not a 1-1 look, it looks very similar to the one used in Android.
 
 ### Screenshots
