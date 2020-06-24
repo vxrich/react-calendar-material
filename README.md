@@ -1,6 +1,7 @@
 # react-calendar-material
 
 This calendar is forked from the awesome work at: ![react-calendar-material](https://github.com/icarus-sullivan/react-calendar-material)
+
 This version includes:
 - Some bugfix
 - Italian language
