@@ -42,6 +42,8 @@ The current list of propTypes.
 	 - **_'flex-col'_** show the calendar below the date
  - **_showHeader (Boolean)_** - whether to show the header for the calendar
  - **_onDatePicked (Function)_** - a callback for when a date is picked
+ - **_eventsBool (Array of Boolean)_** an array of days of month to indicate events
+ - **_border (Boolean)_** a boolean to enable a border (default is false)
 
 ### Usage
 
