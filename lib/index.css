@@ -244,6 +244,19 @@ p {
   width: 14vw;
 }
 
+.non-current .selected.inrange {
+}
+
+.non-current .selected.inrange::before, .non-current .selected.first::before, .non-current .selected.second::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .non-current {
   opacity: 0.2;
 }

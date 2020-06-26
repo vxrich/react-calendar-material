@@ -46,15 +46,17 @@ class Calendar extends Component {
     var d = new Date(this.state.current.getTime());
     d.setMonth(d.getMonth() + month);
     d.setDate(day);
-    this.props.onDatePicked(d);
+    this.props.onDatePicked(d[0]);
+
+    var dCurr = this.props.onDateRangePicked ? this.state.current : d;
 
     if (this.props.onDateRangePicked && this.state.inMidOfSelection) {
       this.setState(
         {
-          current: d,
           selected:
-            this.state.selected[0].getDate() > d.getDate() ||
-            this.state.selected[0].getMonth() > d.getMonth()
+            this.state.selected[0].getDate() +
+              this.state.selected[0].getMonth() * 100 >
+            d.getDate() + d.getMonth() * 100
               ? [d, this.state.selected[0]]
               : [this.state.selected[0], d],
           inMidOfSelection: false,
@@ -65,7 +67,7 @@ class Calendar extends Component {
       );
     } else {
       this.setState({
-        current: d,
+        current: dCurr,
         selected: [d, d],
         inMidOfSelection: true,
       });
@@ -131,15 +133,14 @@ class Calendar extends Component {
       };
     }
 
-    baseClasses += opts.current
-      ? ""
-      : !opts.inrange &&
-        !opts.selected[0] &&
-        !opts.selected[1] &&
-        " non-current";
+    baseClasses += opts.current ? " " : " non-current";
 
     return (
-      <div key={opts.key} className={baseClasses} style={containerStyle}>
+      <div
+        key={opts.key}
+        className={baseClasses}
+        style={selected ? { ...containerStyle, opacity: 1 } : containerStyle}
+      >
         <div
           className={`${today} ${hasEvents}`}
           style={{ borderColor: this.props.accentColor }}
