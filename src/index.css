@@ -226,6 +226,24 @@ p {
   z-index: -100;
 }
 
+.selected.first {
+  border-radius: 15px 0 0 15px;
+  width: 12vw;
+}
+.selected.second {
+  border-radius: 0 15px 15px 0;
+  width: 12vw;
+  left: calc(50% - 6.5vw);
+}
+.selected.second.first {
+  border-radius: 15px;
+}
+.selected.inrange {
+  border-radius: 0;
+  left: calc(50% - 7vw);
+  width: 14vw;
+}
+
 .non-current {
   opacity: 0.2;
 }

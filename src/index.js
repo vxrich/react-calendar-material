@@ -6,14 +6,21 @@ import ic_forward from "./assets/ic_forward.svg";
 import { language } from "./constants";
 
 const TODAY = new Date();
+const TOMORROW = new Date(TODAY);
+TOMORROW.setDate(TOMORROW.getDate() + 1);
 
 class Calendar extends Component {
   constructor(props) {
     super(props);
 
+    this.selectedConstructor = this.props.onDateRangePicked
+      ? [TODAY, TOMORROW]
+      : [TODAY, TODAY];
+
     this.state = {
       current: new Date(),
-      selected: TODAY,
+      selected: this.selectedConstructor,
+      inMidOfSelection: false,
 
       ldom: 30,
     };
@@ -40,10 +47,28 @@ class Calendar extends Component {
     d.setMonth(d.getMonth() + month);
     d.setDate(day);
     this.props.onDatePicked(d);
-    this.setState({
-      current: d,
-      selected: d,
-    });
+
+    if (!!this.props.onDateRangePicked && this.state.inMidOfSelection) {
+      this.setState(
+        {
+          current: d,
+          selected:
+            this.state.selected[0].getDate() > d.getDate()
+              ? [d, this.state.selected[0]]
+              : [this.state.selected[0], d],
+          inMidOfSelection: false,
+        },
+        () => {
+          this.props.onDateRangePicked(this.state.selected);
+        }
+      );
+    } else {
+      this.setState({
+        current: d,
+        selected: [d, d],
+        inMidOfSelection: true,
+      });
+    }
   }
 
   renderDay(opts = {}) {
@@ -65,8 +90,36 @@ class Calendar extends Component {
 
     var selected = "";
     var selectedStyle = {};
-    if (opts.selected) {
+    if (opts.selected[0]) {
+      selected = "selected first";
+      selectedStyle = {
+        backgroundColor: this.props.accentColor,
+      };
+      containerStyle = {
+        color: "#ffffff",
+      };
+    }
+    if (opts.selected[1]) {
+      selected = "selected second";
+      selectedStyle = {
+        backgroundColor: this.props.accentColor,
+      };
+      containerStyle = {
+        color: "#ffffff",
+      };
+    }
+    if (opts.selected[0] && opts.selected[1]) {
       selected = "selected";
+      selectedStyle = {
+        backgroundColor: this.props.accentColor,
+      };
+      containerStyle = {
+        color: "#ffffff",
+      };
+    }
+
+    if (opts.inrange) {
+      selected = "selected inrange";
       selectedStyle = {
         backgroundColor: this.props.accentColor,
       };
@@ -124,24 +177,35 @@ class Calendar extends Component {
         inMonth = false;
       }
 
-      var sel = new Date(this.state.selected.getTime());
-      var isSelected =
-        sel.getFullYear() === copy.getFullYear() &&
-        sel.getDate() === copy.getDate() &&
-        sel.getMonth() === copy.getMonth();
+      var sel1 = new Date(this.state.selected[0].getTime());
+      var isSelectedOne =
+        sel1.getFullYear() === copy.getFullYear() &&
+        sel1.getDate() === copy.getDate() &&
+        sel1.getMonth() === copy.getMonth();
+      var sel2 = new Date(this.state.selected[1].getTime());
+      var isSelectedTwo =
+        sel2.getFullYear() === copy.getFullYear() &&
+        sel2.getDate() === copy.getDate() &&
+        sel2.getMonth() === copy.getMonth();
 
       var isToday =
         TODAY.getFullYear() === copy.getFullYear() &&
         TODAY.getDate() === copy.getDate() &&
         TODAY.getMonth() === copy.getMonth();
 
+      var inRange = false;
+      if (copy.getDate() > sel1.getDate() && copy.getDate() < sel2.getDate()) {
+        inRange = copy.getMonth() === TODAY.getMonth();
+      }
+
       days.push(
         this.renderDay({
           today: isToday,
-          selected: isSelected,
+          selected: [isSelectedOne, isSelectedTwo],
           current: inMonth,
           month: inMonth ? 0 : lastMonth ? -1 : 1,
           date: copy,
+          inrange: inRange,
           key: i,
         })
       );
@@ -174,8 +238,8 @@ class Calendar extends Component {
     // get the month days
     var days = this.renderDays(copy);
 
-    var tMonth = this.config.months[this.state.selected.getMonth()];
-    var tDate = this.state.selected.getDate();
+    var tMonth = this.config.months[this.state.selected[0].getMonth()];
+    var tDate = this.state.selected[0].getDate();
     var month = this.config.months[this.state.current.getMonth()];
     var year = this.state.current.getFullYear();
     var date = this.state.current.getDate();
