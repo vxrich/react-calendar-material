@@ -48,12 +48,13 @@ class Calendar extends Component {
     d.setDate(day);
     this.props.onDatePicked(d);
 
-    if (!!this.props.onDateRangePicked && this.state.inMidOfSelection) {
+    if (this.props.onDateRangePicked && this.state.inMidOfSelection) {
       this.setState(
         {
           current: d,
           selected:
-            this.state.selected[0].getDate() > d.getDate()
+            this.state.selected[0].getDate() > d.getDate() ||
+            this.state.selected[0].getMonth() > d.getMonth()
               ? [d, this.state.selected[0]]
               : [this.state.selected[0], d],
           inMidOfSelection: false,
@@ -72,6 +73,8 @@ class Calendar extends Component {
   }
 
   renderDay(opts = {}) {
+    console.log(opts);
+
     var baseClasses = "day noselect";
     var today = "";
     var todayStyle = {};
@@ -128,7 +131,12 @@ class Calendar extends Component {
       };
     }
 
-    baseClasses += opts.current ? "" : " non-current";
+    baseClasses += opts.current
+      ? ""
+      : !opts.inrange &&
+        !opts.selected[0] &&
+        !opts.selected[1] &&
+        " non-current";
 
     return (
       <div key={opts.key} className={baseClasses} style={containerStyle}>
@@ -166,6 +174,8 @@ class Calendar extends Component {
       // increase date
       copy.setDate(copy.getDate() + 1);
 
+      console.log(copy);
+
       // make sure we pass any previous month values
       if (i < 30 && copy.getDate() === 1) {
         inMonth = true;
@@ -182,6 +192,7 @@ class Calendar extends Component {
         sel1.getFullYear() === copy.getFullYear() &&
         sel1.getDate() === copy.getDate() &&
         sel1.getMonth() === copy.getMonth();
+
       var sel2 = new Date(this.state.selected[1].getTime());
       var isSelectedTwo =
         sel2.getFullYear() === copy.getFullYear() &&
@@ -193,10 +204,21 @@ class Calendar extends Component {
         TODAY.getDate() === copy.getDate() &&
         TODAY.getMonth() === copy.getMonth();
 
-      var inRange = false;
-      if (copy.getDate() > sel1.getDate() && copy.getDate() < sel2.getDate()) {
-        inRange = copy.getMonth() === TODAY.getMonth();
-      }
+      const inRange =
+        copy.getDate() + copy.getMonth() * 100 >
+          sel1.getDate() + sel1.getMonth() * 100 &&
+        copy.getDate() + copy.getMonth() * 100 <
+          sel2.getDate() + sel2.getMonth() * 100;
+
+      console.log(
+        copy.getMonth(),
+        sel1.getMonth(),
+        sel2.getMonth(),
+        " --- ",
+        copy.getDate(),
+        sel1.getDate(),
+        sel2.getDate()
+      );
 
       days.push(
         this.renderDay({
