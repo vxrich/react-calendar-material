@@ -46,7 +46,7 @@ class Calendar extends Component {
     var d = new Date(this.state.current.getTime());
     d.setMonth(d.getMonth() + month);
     d.setDate(day);
-    this.props.onDatePicked(d[0]);
+    this.props.onDatePicked(d);
 
     var dCurr = this.props.onDateRangePicked ? this.state.current : d;
 
