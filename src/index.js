@@ -75,8 +75,6 @@ class Calendar extends Component {
   }
 
   renderDay(opts = {}) {
-    console.log(opts);
-
     var baseClasses = "day noselect";
     var today = "";
     var todayStyle = {};
@@ -175,8 +173,6 @@ class Calendar extends Component {
       // increase date
       copy.setDate(copy.getDate() + 1);
 
-      console.log(copy);
-
       // make sure we pass any previous month values
       if (i < 30 && copy.getDate() === 1) {
         inMonth = true;
@@ -210,16 +206,6 @@ class Calendar extends Component {
           sel1.getDate() + sel1.getMonth() * 100 &&
         copy.getDate() + copy.getMonth() * 100 <
           sel2.getDate() + sel2.getMonth() * 100;
-
-      console.log(
-        copy.getMonth(),
-        sel1.getMonth(),
-        sel2.getMonth(),
-        " --- ",
-        copy.getDate(),
-        sel1.getDate(),
-        sel2.getDate()
-      );
 
       days.push(
         this.renderDay({
