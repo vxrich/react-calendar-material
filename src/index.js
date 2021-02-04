@@ -79,10 +79,7 @@ class Calendar extends Component {
 
     return (
       <div key={opts.key} className={baseClasses} style={containerStyle}>
-        <div
-          className={`${today} ${hasEvents}`}
-          style={{ borderColor: this.props.accentColor }}
-        ></div>
+        <div className={`${today} ${hasEvents}`} style={{ borderColor: this.props.accentColor }}></div>
         <div className={selected} style={selectedStyle}></div>
         <p
           onClick={(ev) => {
@@ -102,6 +99,8 @@ class Calendar extends Component {
     // set to beginning of month
     copy.setDate(1);
 
+    const currentMonth = copy.getMonth();
+
     // if we are missing no offset, include the previous week
     var offset = copy.getDay() === 0 ? 7 : copy.getDay();
 
@@ -109,18 +108,18 @@ class Calendar extends Component {
 
     var inMonth = false;
     var lastMonth = true;
+
     for (var i = 0; i < 42; i++) {
       // increase date
       copy.setDate(copy.getDate() + 1);
-
       // make sure we pass any previous month values
-      if (i < 30 && copy.getDate() === 1) {
+      if (copy.getMonth() === currentMonth) {
         inMonth = true;
         lastMonth = false;
       }
       // if we are seeing the '1' again, we have iterated over
       // the current month
-      else if (i > 30 && copy.getDate() === 1) {
+      else {
         inMonth = false;
       }
 
@@ -173,7 +172,6 @@ class Calendar extends Component {
 
     // get the month days
     var days = this.renderDays(copy);
-
     var tMonth = this.config.months[this.state.selected.getMonth()];
     var tDate = this.state.selected.getDate();
     var month = this.config.months[this.state.current.getMonth()];
@@ -209,9 +207,7 @@ class Calendar extends Component {
               }}
             ></img>
             <div className="month-title">
-              <p style={{ color: this.props.accentColor, fontWeight: "bold" }}>
-                {month}
-              </p>
+              <p style={{ color: this.props.accentColor, fontWeight: "bold" }}>{month}</p>
               <span className="month-year">{year}</span>
             </div>
             <img
