@@ -79,7 +79,10 @@ class Calendar extends Component {
 
     return (
       <div key={opts.key} className={baseClasses} style={containerStyle}>
-        <div className={`${today} ${hasEvents}`} style={{ borderColor: this.props.accentColor }}></div>
+        <div
+          className={`${today} ${hasEvents}`}
+          style={{ borderColor: this.props.accentColor }}
+        ></div>
         <div className={selected} style={selectedStyle}></div>
         <p
           onClick={(ev) => {
@@ -108,6 +111,8 @@ class Calendar extends Component {
 
     var inMonth = false;
     var lastMonth = true;
+
+    console.log("RENDER DAYS");
 
     for (var i = 0; i < 42; i++) {
       // increase date
@@ -207,7 +212,9 @@ class Calendar extends Component {
               }}
             ></img>
             <div className="month-title">
-              <p style={{ color: this.props.accentColor, fontWeight: "bold" }}>{month}</p>
+              <p style={{ color: this.props.accentColor, fontWeight: "bold" }}>
+                {month}
+              </p>
               <span className="month-year">{year}</span>
             </div>
             <img
