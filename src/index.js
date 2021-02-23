@@ -112,8 +112,6 @@ class Calendar extends Component {
     var inMonth = false;
     var lastMonth = true;
 
-    console.log("RENDER DAYS");
-
     for (var i = 0; i < 42; i++) {
       // increase date
       copy.setDate(copy.getDate() + 1);
